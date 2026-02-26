@@ -1,0 +1,30 @@
+{
+  "name": "changex-motion-ts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "基于 Remotion + Three.js 的交互式教程视频制作项目",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render GitTutorial out/git-tutorial.mp4",
+    "build:photosynthesis": "remotion render Photosynthesis out/photosynthesis.mp4",
+    "studio": "remotion studio"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.120.0",
+    "@react-three/fiber": "^8.17.0",
+    "@remotion/cli": "4.0.429",
+    "@remotion/lottie": "4.0.429",
+    "@remotion/player": "4.0.429",
+    "@remotion/three": "4.0.429",
+    "lottie-web": "^5.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "4.0.429",
+    "three": "^0.182.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.3.0"
+  }
+}
