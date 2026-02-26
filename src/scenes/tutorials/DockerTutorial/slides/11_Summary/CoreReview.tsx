@@ -1,7 +1,7 @@
-// Docker 教程总结幻灯片
+// Docker 教程总结 - 核心回顾
 import React from 'react';
 import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
-import { COLORS, BACKGROUND } from '../config';
+import { COLORS, BACKGROUND } from '../../config';
 
 const summaryItems = [
   { title: '镜像管理', items: ['docker pull/push', 'docker build', 'docker images', 'docker rmi'] },
@@ -10,7 +10,7 @@ const summaryItems = [
   { title: '网络配置', items: ['bridge网络', '自定义网络', '容器互联', '端口映射'] },
 ];
 
-export const SummarySlide: React.FC = () => {
+export const CoreReview: React.FC = () => {
   const frame = useCurrentFrame();
 
   const titleOpacity = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
@@ -93,25 +93,6 @@ export const SummarySlide: React.FC = () => {
             </div>
           );
         })}
-      </div>
-
-      {/* 底部鼓励 */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 50,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          textAlign: 'center',
-          opacity: interpolate(frame, [60, 80], [0, 1], { extrapolateRight: 'clamp' }),
-        }}
-      >
-        <div style={{ color: COLORS.text, fontSize: 28, marginBottom: 10 }}>
-          恭喜你完成了 Docker 教程！🐳
-        </div>
-        <div style={{ color: COLORS.textMuted, fontSize: 18 }}>
-          继续实践，成为容器化高手！
-        </div>
       </div>
     </AbsoluteFill>
   );

@@ -3,35 +3,57 @@ import React from 'react';
 import { AbsoluteFill, Sequence } from 'remotion';
 // 幻灯片
 import {
-  // 概念说明幻灯片
+  // Title 已重构为文件夹结构
   TitleSlide,
+  TITLE_TOTAL_FRAMES,
   WhatIsDockerSlide,
+  WHAT_IS_DOCKER_TOTAL_FRAMES,
   BasicCommandsSlide,
-  // 操作演示幻灯片
+  BASIC_COMMANDS_TOTAL_FRAMES,
   ImageOperationsSlide,
+  IMAGE_OPERATIONS_TOTAL_FRAMES,
   ContainerOperationsSlide,
+  CONTAINER_OPERATIONS_TOTAL_FRAMES,
+  // 操作演示幻灯片
   DockerfileSlide,
+  DOCKERFILE_TOTAL_FRAMES,
   ComposeSlide,
+  COMPOSE_TOTAL_FRAMES,
   NetworkSlide,
+  NETWORK_TOTAL_FRAMES,
   VolumeSlide,
+  VOLUME_TOTAL_FRAMES,
   // 总结幻灯片
   BestPracticesSlide,
+  BEST_PRACTICES_TOTAL_FRAMES,
   SummarySlide,
+  SUMMARY_TOTAL_FRAMES,
 } from './slides';
 
 // 幻灯片配置：定义每个幻灯片的时长（帧数）
 const SLIDES_CONFIG = [
-  { name: 'TitleSlide', duration: 90, component: TitleSlide },
-  { name: 'WhatIsDockerSlide', duration: 150, component: WhatIsDockerSlide },
-  { name: 'BasicCommandsSlide', duration: 180, component: BasicCommandsSlide },
-  { name: 'ImageOperationsSlide', duration: 300, component: ImageOperationsSlide },
-  { name: 'ContainerOperationsSlide', duration: 300, component: ContainerOperationsSlide },
-  { name: 'DockerfileSlide', duration: 300, component: DockerfileSlide },
-  { name: 'ComposeSlide', duration: 300, component: ComposeSlide },
-  { name: 'NetworkSlide', duration: 240, component: NetworkSlide },
-  { name: 'VolumeSlide', duration: 240, component: VolumeSlide },
-  { name: 'BestPracticesSlide', duration: 120, component: BestPracticesSlide },
-  { name: 'SummarySlide', duration: 120, component: SummarySlide },
+  // Title 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'TitleSlide', duration: TITLE_TOTAL_FRAMES, component: TitleSlide },
+  // WhatIsDocker 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'WhatIsDockerSlide', duration: WHAT_IS_DOCKER_TOTAL_FRAMES, component: WhatIsDockerSlide },
+  // BasicCommands 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'BasicCommandsSlide', duration: BASIC_COMMANDS_TOTAL_FRAMES, component: BasicCommandsSlide },
+  // ImageOperations 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'ImageOperationsSlide', duration: IMAGE_OPERATIONS_TOTAL_FRAMES, component: ImageOperationsSlide },
+  // ContainerOperations 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'ContainerOperationsSlide', duration: CONTAINER_OPERATIONS_TOTAL_FRAMES, component: ContainerOperationsSlide },
+  // Dockerfile 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'DockerfileSlide', duration: DOCKERFILE_TOTAL_FRAMES, component: DockerfileSlide },
+  // Compose 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'ComposeSlide', duration: COMPOSE_TOTAL_FRAMES, component: ComposeSlide },
+  // Network 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'NetworkSlide', duration: NETWORK_TOTAL_FRAMES, component: NetworkSlide },
+  // Volume 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'VolumeSlide', duration: VOLUME_TOTAL_FRAMES, component: VolumeSlide },
+  // BestPractices 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'BestPracticesSlide', duration: BEST_PRACTICES_TOTAL_FRAMES, component: BestPracticesSlide },
+  // Summary 已重构为文件夹结构，时长由内部子幻灯片决定
+  { name: 'SummarySlide', duration: SUMMARY_TOTAL_FRAMES, component: SummarySlide },
 ] as const;
 
 // 计算每个幻灯片的起始帧和总帧数

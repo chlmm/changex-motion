@@ -1,7 +1,7 @@
-// Docker 最佳实践幻灯片
+// Docker 最佳实践 - 核心实践卡片
 import React from 'react';
 import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
-import { COLORS, BACKGROUND } from '../config';
+import { COLORS, BACKGROUND } from '../../config';
 
 const practices = [
   { title: '使用 .dockerignore', desc: '排除不必要的文件，减小镜像体积', icon: '📄' },
@@ -12,7 +12,7 @@ const practices = [
   { title: '单一职责', desc: '每个容器只运行一个进程', icon: '🎯' },
 ];
 
-export const BestPracticesSlide: React.FC = () => {
+export const CorePractices: React.FC = () => {
   const frame = useCurrentFrame();
 
   const titleOpacity = interpolate(frame, [0, 20], [0, 1], { extrapolateRight: 'clamp' });
@@ -96,25 +96,6 @@ export const BestPracticesSlide: React.FC = () => {
             </div>
           );
         })}
-      </div>
-
-      {/* 底部提示 */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 40,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: `${COLORS.warning}20`,
-          border: `1px solid ${COLORS.warning}60`,
-          borderRadius: 12,
-          padding: '15px 30px',
-          opacity: interpolate(frame, [80, 100], [0, 1], { extrapolateRight: 'clamp' }),
-        }}
-      >
-        <span style={{ color: COLORS.warning, fontSize: 18 }}>
-          💡 遵循最佳实践可以让你的容器更安全、更高效、更易维护
-        </span>
       </div>
     </AbsoluteFill>
   );

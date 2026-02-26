@@ -1,10 +1,10 @@
-// Docker 教程标题幻灯片
+// Docker 教程主标题动画
 import React from 'react';
 import { AbsoluteFill, useCurrentFrame, interpolate } from 'remotion';
-import { COLORS, BACKGROUND } from '../config';
-import { DockerWhale } from '../components/DockerWhale';
+import { COLORS, BACKGROUND } from '../../config';
+import { DockerWhale } from '../../components/DockerWhale';
 
-export const TitleSlide: React.FC = () => {
+export const MainTitle: React.FC = () => {
   const frame = useCurrentFrame();
 
   // 标题动画
@@ -65,33 +65,6 @@ export const TitleSlide: React.FC = () => {
         }}
       >
         容器化技术从入门到精通
-      </div>
-
-      {/* 底部装饰 */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 60,
-          display: 'flex',
-          gap: 20,
-          opacity: subtitleOpacity,
-        }}
-      >
-        {['镜像', '容器', '网络', '数据卷', '编排'].map((item) => (
-          <div
-            key={item}
-            style={{
-              padding: '10px 20px',
-              background: 'rgba(36, 150, 237, 0.2)',
-              borderRadius: 20,
-              border: `1px solid ${COLORS.primary}`,
-              color: COLORS.text,
-              fontSize: 18,
-            }}
-          >
-            {item}
-          </div>
-        ))}
       </div>
     </AbsoluteFill>
   );

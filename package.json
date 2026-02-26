@@ -5,9 +5,12 @@
   "description": "基于 Remotion + Three.js 的交互式教程视频制作项目",
   "scripts": {
     "start": "remotion studio",
-    "build": "remotion render GitTutorial out/git-tutorial.mp4",
-    "build:photosynthesis": "remotion render Photosynthesis out/photosynthesis.mp4",
-    "studio": "remotion studio"
+    "studio": "remotion studio",
+    "render": "remotion render",
+    "render:git": "remotion render GitTutorial out/git/git-$(date +%Y%m%d-%H%M).mp4",
+    "render:docker": "remotion render DockerTutorial out/docker/docker-$(date +%Y%m%d-%H%M).mp4",
+    "render:photosynthesis": "remotion render Photosynthesis out/photosynthesis/photosynthesis-$(date +%Y%m%d-%H%M).mp4",
+    "render:all": "npm run render:git && npm run render:docker && npm run render:photosynthesis"
   },
   "dependencies": {
     "@react-three/drei": "^9.120.0",
