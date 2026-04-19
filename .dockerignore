@@ -1,0 +1,45 @@
+# Dependencies (will be installed inside container)
+node_modules/
+
+# Build output
+out/
+dist/
+build/
+*.mp4
+*.webm
+
+# Remotion cache
+.remotion/
+
+# Docs
+docs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docker itself
+docker/
+
+# Temporary & cache
+.cache/
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Archive
+_archive/
+
+# Logs
+*.log

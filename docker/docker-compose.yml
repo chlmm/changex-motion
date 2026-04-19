@@ -1,0 +1,28 @@
+services:
+  # 开发预览模式 — Remotion Studio
+  studio:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../src:/app/src
+      - ../public:/app/public
+    environment:
+      - OPENGL=swiftshader
+    command: npx remotion studio
+
+  # 渲染模式 — 输出视频文件
+  render:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../out:/app/out
+      - ../public:/app/public
+    environment:
+      - OPENGL=swiftshader
+    # 默认渲染 DockerTutorial，可通过命令行覆盖
+    # 用法: docker compose run render remotion render <CompositionId> out/<output>.mp4
+    command: npx remotion render DockerTutorial out/docker/docker-tutorial.mp4

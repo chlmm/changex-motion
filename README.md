@@ -117,6 +117,50 @@ Docker 入门教程，包含：
 - 预设角色：主角、女主、反派、NPC
 - 动画状态：idle、walk、talk
 
+## Docker 部署
+
+项目提供了 Docker 环境，支持 Remotion Studio 预览和视频渲染，无需本地安装 Node.js 和 Chromium。
+
+### 环境说明
+
+| 配置项 | 说明 |
+|--------|------|
+| 基础镜像 | `node:18-bookworm`（Debian 12） |
+| Chromium | 系统安装，Remotion 渲染必需 |
+| 3D 渲染 | SwiftShader 软件渲染，无需 GPU |
+| 中文字体 | Noto CJK，终端中文正常显示 |
+| FFmpeg | 视频编码输出 |
+
+### 启动 Remotion Studio（开发预览）
+
+```bash
+# 构建并启动 Studio，访问 http://localhost:3000
+docker compose -f docker/docker-compose.yml up studio
+```
+
+Studio 模式挂载了 `src/` 和 `public/` 目录，代码修改后实时生效。
+
+### 渲染视频
+
+```bash
+# 渲染 DockerTutorial（默认）
+docker compose -f docker/docker-compose.yml up render
+
+# 渲染 GitTutorial
+docker compose -f docker/docker-compose.yml run render npx remotion render GitTutorial out/git/git-tutorial.mp4
+
+# 渲染光合作用视频
+docker compose -f docker/docker-compose.yml run render npx remotion render Photosynthesis out/photosynthesis/photosynthesis.mp4
+```
+
+渲染输出的视频文件会写入宿主机的 `out/` 目录。
+
+### 仅构建镜像
+
+```bash
+docker build -f docker/Dockerfile -t changex-motion-ts .
+```
+
 ## 命令说明
 
 | 命令 | 说明 |
